@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  background-color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button--small {
+  padding: 10px;
+}
+.button--large {
+  padding: 20px;
+}
+.button__label {
+  color: white;
+}/*# sourceMappingURL=button.css.map */

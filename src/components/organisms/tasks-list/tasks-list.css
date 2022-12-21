@@ -1,0 +1,8 @@
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tasks-list__title {
+  text-align: center;
+}/*# sourceMappingURL=tasks-list.css.map */

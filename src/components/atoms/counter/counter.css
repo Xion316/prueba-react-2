@@ -1,0 +1,12 @@
+.counter {
+  width: 300px;
+  border: 1px solid black;
+  padding: 10px 30px;
+  border-radius: 4px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.counter__description {
+  font-weight: bold;
+}/*# sourceMappingURL=counter.css.map */

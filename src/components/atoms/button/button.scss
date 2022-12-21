@@ -1,0 +1,18 @@
+.button {
+  border: none;
+  background-color: black;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &--small {
+    padding: 10px;
+  }
+
+  &--large {
+    padding: 20px;
+  }
+
+  &__label {
+    color: white;
+  }
+}
