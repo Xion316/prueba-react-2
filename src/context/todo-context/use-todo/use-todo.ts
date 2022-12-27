@@ -1,27 +1,27 @@
 import React from "react";
 import { useState } from "react";
-import { Task } from '../../../utils/interfaces/task';
-const useTodo = ()=>{
-const [taskList, setTaskList] = useState<Task[]>([]); 
-const [completedTaskList, setCompletedTaskList]=useState<Task[]>([]);
-const addTask = (title:string)=>{
-    const newTask: Task ={
+import Gif from "../../../utils/interfaces/gif";
+const useGif = ()=>{
+const [gifList, setGifList] = useState<Gif[]>([]); 
+const addGif = (url:string)=>{
+    const newGif: Gif ={
         id: Math.floor(Math.random()*200),
-        title: title
+        url: url,
+        author_id: 1004
     };    
-setTaskList([...taskList,newTask]);    
+setGifList([...gifList,newGif]);    
 };
  
 
 
-const deleteTask=(id:number)=>{};
-const completeTask=(id:number)=>{};
+const deleteGif=(id:number,url:string)=>{};
+
 return{
-    taskList,
-    completedTaskList,
-    addTask,
-    deleteTask,
-    completeTask,
+    addGif,
+    deleteGif,
+    gifList
+    
+
 }
 };
-export default useTodo;
+export default useGif;

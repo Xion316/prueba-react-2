@@ -1,16 +1,20 @@
 import { FC } from "react";
+import Gif from "../../../utils/interfaces/gif";
 import "./card.scss";
-import Checkbox from "../../atoms/checkbox/checkbox";
 import Button from "../../atoms/button/button";
 
 interface CardProps {
-  title: string;
+  gif: Gif;
+  onDelete: (id: number, url: string) => void;
 }
 
-const Card: FC<CardProps> = ({ title }) => {
+const Card: FC<CardProps> = ({ gif, onDelete }) => {
   return (
     <div className="card">
-      <Checkbox title={title} isChecked={false} handleCheck={() => {}} />
+      <img
+        src={gif.url}
+        alt={`GIF DE ${gif.author_id} CON ${gif.id}`}
+      />
       <Button onClick={() => {}}>Eliminar</Button>
     </div>
   );

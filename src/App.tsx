@@ -1,13 +1,14 @@
 
 import ToDo from "./components/templates/to-do/to-do";
-import { TodoProvider } from './context/todo-context/todo-context';
+import { GifProvider } from './context/todo-context/todo-context';
+GifProvider
 
 function App() {
   return(
     <>
-    <TodoProvider>
+    <GifProvider>
       <ToDo/>
-    </TodoProvider>
+    </GifProvider>
     </>
   );
   

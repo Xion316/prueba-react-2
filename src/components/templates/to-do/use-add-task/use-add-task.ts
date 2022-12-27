@@ -1,19 +1,19 @@
 import React,{useState} from "react";
 
-const useAddTask = ()=>{
+const useAddGif = ()=>{
 
-const [title, setTitle] = useState("");
+const [gifUrl, setGifUrl] = useState("");
 
-const handleChangeTitle=(value:string)=>{
-    setTitle(value);
-    console.log(title);   
+const handleChangeGifUrl=(value:string)=>{
+    setGifUrl(value);
+    console.log(gifUrl);   
 };
 
 
 return{
-    title,handleChangeTitle,setTitle
+    gifUrl,handleChangeGifUrl,setGifUrl
 }
 };
 
 
-export default useAddTask;
+export default useAddGif;

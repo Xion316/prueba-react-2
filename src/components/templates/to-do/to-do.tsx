@@ -1,33 +1,30 @@
 import Button from "../../atoms/button/button";
-import Counter from "../../atoms/counter/counter";
 import Input from "../../atoms/input/input";
-import TasksList from "../../organisms/tasks-list/tasks-list";
 import "./to-do.scss";
-import { useTodoContext } from '../../../context/todo-context/todo-context';
-import useAddTask from './use-add-task/use-add-task';
+import { useGifContext } from "../../../context/todo-context/todo-context";
+import useAddGif from "./use-add-task/use-add-task";
+import GifsList from "../../organisms/gifs-list/gif-list";
 
 
 const ToDo = () => {
-  const { taskList, completedTaskList,addTask } = useTodoContext();
-  const {title,handleChangeTitle, setTitle}= useAddTask();
+  const { addGif,deleteGif,gifList } = useGifContext();
+  const {gifUrl,handleChangeGifUrl,setGifUrl}= useAddGif();
   return (
     <div className="to-do">
-      <h1 className="to-do__title">TODO LIST</h1>
+      <h1 className="to-do__title">GIF Galery</h1>
       <div className="to-do__header">
         <Input
-
-          value={title}
-          name="addTask"
-          onChange={handleChangeTitle}
-          placeholder="Título" 
-          onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>)=>{ if (event.key === 'Enter') addTask(title), setTitle("") }}                 />
-        <Button onClick={() => {addTask(title), setTitle("")}}>Agregar</Button>
+          value={gifUrl}
+          name="addGif"
+          onChange={handleChangeGifUrl}
+          placeholder="Gif URL" 
+          onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>)=>{ if (event.key === 'Enter') addGif(gifUrl), setGifUrl("") }}                 />
+        <Button onClick={() => {addGif(gifUrl), setGifUrl("")}}>Agregar</Button>
       </div>
 
-      <TasksList tasks={taskList} />
-      <div className="to-do__counter">
-        <Counter completedTasks={completedTaskList.length} totalTasks={taskList.length} />
-      </div>
+      <GifsList gifs={gifList} onDelete={function (id: number, url: string): void {
+        throw new Error("Function not implemented.");
+      } }/>
     </div>
   );
 };

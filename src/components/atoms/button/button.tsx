@@ -4,13 +4,13 @@ import "./button.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
-  size?: "small" | "large";
+  buttonType?: "add" | "delete";
   onClick: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ children, size = "small", onClick }) => {
+const Button: FC<ButtonProps> = ({ children, buttonType="add", onClick }) => {
   return (
-    <button onClick={onClick} className={`button button--${size}`}>
+    <button onClick={onClick} className={`button button--${buttonType}`}>
       <label className="button__label button__label--red">{children}</label>
     </button>
   );
